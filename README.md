@@ -1,0 +1,1 @@
+This is my project for a more fully fleshed out incremental/clicker/micromanegment game

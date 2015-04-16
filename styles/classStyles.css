@@ -1,0 +1,44 @@
+.tab-box{
+  display:inline-block;
+  width:10%;
+  height:50px;
+  border: 1px solid black;
+}
+
+.box{
+  display:inline-block;
+  border:1px solid black;
+  margin:auto;
+  margin-left:15px;
+  padding:0 4px 0 4px;
+  height:120px;
+  width:215px;
+}
+
+.number-input{
+  width:50%;
+}
+
+.label{
+  display:inline-block;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.na{
+  display:none;
+}
+
+.collection-space{
+  height:100%;
+  width:120%;
+  border:1px solid black;
+  display:inline-block;
+}

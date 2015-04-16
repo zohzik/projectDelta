@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>project delta</title>
+    <meta content="text;charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/classStyles.css"/>
+  </head>
+  <body>
+    <div id="main-content">
+      
+      <div id="page-top-space">
+        <table id="header-table">
+          <tbody>
+            <tr>
+              <td>
+                <div id="player-name-space" class="label, collection-space">
+                  Name: <div id="player-name-space-insert" class="label">____</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div id="player-gold-space" class="label, collection-space">
+                  Gold: <div id="player-gold-space-insert" class="label">0</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- End of top-space -->
+      
+      <div id="bottom-space">
+        <table id="page-divider">
+          <tbody>
+            <tr>
+              <td class="noselect">
+                <div id="main-clicker-button-box" class="noselect">
+                  <div id="main-clicker-button" class="noselect" onclick="mainButtonClick();">
+                    <center>
+                      <img id="main-clicker-img" class="noselect" src="assets/pic.jpg" alt="Pick Axe Image"/>
+                    </center>
+                  </div>
+                </div>
+              </td>
+               <!-- End of main button section -->
+              
+              <td>
+                <table id="game-gui">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div id="tab-bar">
+                          <center>
+                            
+                          <div id="inventory-tab" class="tab-box" onclick="cyclePage('inventory');">
+                            <center>
+                              <p>Inventory</p>
+                            </center>
+                          </div>
+                          
+                          <div id="store-tab" class="tab-box" onclick="cyclePage('store');">
+                            <center>
+                              <p>Store</p>
+                            </center>
+                          </div>
+                        </center>
+                          
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- End of tabs -->
+                    
+                    <tr>
+                      <td>
+                        <div id="inventory-page" class="">
+                          <table id="inventory-page-seperator">
+                            <tbody>
+                              <tr id="button-place">
+                                <td>
+                                  <center>
+                                      <div id="sell-all-buton">
+                                        <input type="button" value="Sell All" id="sell-all" onclick="sellAll();"/>
+                                    </div>
+                                  </center>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <center>
+                                  
+                                    <div id="inventory-box-0" class="na">
+                                      <center>
+                                        <p>Dirt</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-0-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: .01 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-0-sell-num" class="number-input" min="0"/>
+                                        <input type="button" value="Sell" id="inventory-box-0-sell" onclick="sellOre(0);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                    <div id="inventory-box-1" class="na">
+                                      <center>
+                                        <p>Rock</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-1-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: .10 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-1-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-1-sell" onclick="sellOre(1);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                   <div id="inventory-box-2" class="na">
+                                      <center>
+                                        <p>Clay</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-2-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: .50 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-2-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-2-sell" onclick="sellOre(2);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                    <div id="inventory-box-3" class="na">
+                                      <center>
+                                        <p>Coal</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-3-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: 1 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-3-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-3-sell" onclick="sellOre(3);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                  </center>
+                                  
+                                  <!-- End of inventory item box -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <!-- End of inventory page -->
+                        
+                        <div id="store-page" class="na">
+                          <div id="store-box-0" class="box">
+                            <center>
+                              <p>Pickaxe efficiency x2</p>
+                              <div class="label">Cost: </div><div id="store-box-0-cost" class="label">50 Gold</div><br/>
+                              <input type="button" value="Buy" id="store-box-0-buy" onclick="buyItem(0);"/>
+                              <br/>
+                              <br/>
+                            </center>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- End of bottom-space -->
+      
+    </div>
+    
+    
+    <script type="text/javascript" src="scripts/script.js"></script>
+  </body>
+</html>
