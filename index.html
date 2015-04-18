@@ -65,6 +65,12 @@
                               <p>Store</p>
                             </center>
                           </div>
+                          
+                          <div id="people-tab" class="tab-box" onclick="cyclePage('people');">
+                            <center>
+                              <p>People</p>
+                            </center>
+                          </div>
                         </center>
                           
                         </div>
@@ -159,6 +165,23 @@
                             </center>
                           </div>
                         </div>
+                        <!-- End of store page -->
+                        
+                        <div id="people-page" class="na">
+                          <div id="people-box-0" class="box">
+                            <center>
+                              <p>Miner</p>
+                              <div class="label">Mines per second: </div><div class="label" id="people-box-0-per-sec">1</div><br/>
+                              <div class="label">Amount: </div><div class="label" id="people-box-0-amount">0</div><br/>
+                              <div class="label">Max amount: </div><div class="label" id="people-box-0-max-amount">5</div><br/>
+                              <div class="label">Cost: </div><div class="label" id="people-box-0-cost">100</div><br/>
+                              <input type="button" value="Buy" id="people-box-0-buy" onclick="buyPeople(0);"/>
+                              <br/>
+                              <br/>
+                            </center>
+                          </div>
+                        </div>
+                        
                       </td>
                     </tr>
                   </tbody>
