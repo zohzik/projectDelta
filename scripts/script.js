@@ -298,3 +298,4 @@ function giveItem(item){
   }
 }
 
+console.log("hello");
