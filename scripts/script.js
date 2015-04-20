@@ -298,4 +298,12 @@ function giveItem(item){
   }
 }
 
-console.log("hello");
+//debugging and testing function, gives people item
+function givePeople(people){
+  for(var i = 0; i < Game.people.length; i++){
+    if(people.toLowerCase() === Game.people[i].name.toLowerCase()){
+      buyPeopleBypass(i);
+      return;
+    }
+  }
+}
