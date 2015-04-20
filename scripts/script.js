@@ -307,3 +307,4 @@ function givePeople(people){
     }
   }
 }
+
