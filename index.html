@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
     <link rel="stylesheet" type="text/css" href="styles/classStyles.css"/>
   </head>
-  <body>
+  <body class="noselect">
     <div id="main-content">
       
       <div id="page-top-space">
@@ -23,6 +23,13 @@
               <td>
                 <div id="player-gold-space" class="label, collection-space">
                   Gold: <div id="player-gold-space-insert" class="label">0</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div id="player-population-space" class="label, collection-space">
+                  Population: <div id="player-population-space-insert" class="label">0/0</div>
                 </div>
               </td>
             </tr>
@@ -69,6 +76,12 @@
                           <div id="people-tab" class="tab-box" onclick="cyclePage('people');">
                             <center>
                               <p>People</p>
+                            </center>
+                          </div>
+                          
+                          <div id="crafting-tab" class="tab-box" onclick="cyclePage('crafting');">
+                            <center>
+                              <p>Crafting</p>
                             </center>
                           </div>
                         </center>
@@ -144,6 +157,66 @@
                                       </center>
                                     </div>
                                     
+                                    <div id="inventory-box-4" class="na">
+                                      <center>
+                                        <p>Wood</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-4-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: .75 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-4-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-4-sell" onclick="sellOre(4);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                    <div id="inventory-box-5" class="na">
+                                      <center>
+                                        <p>Iron</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-5-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: 1.50 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-5-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-5-sell" onclick="sellOre(5);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                    <div id="inventory-box-6" class="na">
+                                      <center>
+                                        <p>Copper</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-6-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: 1.50 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-6-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-6-sell" onclick="sellOre(6);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                    <div id="inventory-box-7" class="na">
+                                      <center>
+                                        <p>Silver</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-7-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: 3 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-7-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-7-sell" onclick="sellOre(7);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
+                                    <div id="inventory-box-8" class="na">
+                                      <center>
+                                        <p>Gold</p>
+                                        <div class="label">Amount: </div><div id="inventory-box-8-amount" class="label">0</div><br/>
+                                        <div class="label">Worth: 5 Gold</div><br/>
+                                        <input type="number" value="0" id="inventory-box-8-sell-num" class="number-input"/>
+                                        <input type="button" value="Sell" id="inventory-box-8-sell" onclick="sellOre(8);"/>
+                                        <br/>
+                                        <br/>
+                                      </center>
+                                    </div>
+                                    
                                   </center>
                                   
                                   <!-- End of inventory item box -->
@@ -170,7 +243,8 @@
                         <div id="people-page" class="na">
                           <div id="people-box-0" class="box">
                             <center>
-                              <p>Miner</p>
+                              <p>Miner<br/>
+                              Collects basic materials</p>
                               <div class="label">Mines per second: </div><div class="label" id="people-box-0-per-sec">1</div><br/>
                               <div class="label">Amount: </div><div class="label" id="people-box-0-amount">0</div><br/>
                               <div class="label">Max amount: </div><div class="label" id="people-box-0-max-amount">5</div><br/>
@@ -180,7 +254,64 @@
                               <br/>
                             </center>
                           </div>
+                          
+                          <div id="people-box-1" class="box">
+                            <center>
+                              <p>Woodsman<br/>
+                              Collects wood</p>
+                              <div class="label">Mines per second: </div><div class="label" id="people-box-1-per-sec">1</div><br/>
+                              <div class="label">Amount: </div><div class="label" id="people-box-1-amount">0</div><br/>
+                              <div class="label">Max amount: </div><div class="label" id="people-box-1-max-amount">2</div><br/>
+                              <div class="label">Cost: </div><div class="label" id="people-box-1-cost">250</div><br/>
+                              <input type="button" value="Buy" id="people-box-1-buy" onclick="buyPeople(1);"/>
+                              <br/>
+                              <br/>
+                            </center>
+                          </div>
+                          
                         </div>
+                        <!--End of people page-->
+                        
+                        <div id="crafting-page" class="na">
+                          
+                          <div id="crafting-box-0" class="box">
+                            <center>
+                              <p>Dirt hut <br/>
+                              Houses one person</p>
+                              <div class="label">Requires: 100 Dirt, 50 Clay</div><br/>
+                              <div class="label">Amount: </div><div class="label" id="crafting-box-0-amount">0</div><br/>
+                              <input type="button" value="Craft" id="crafting-box-0-buy" onclick="craftItem(0);"/>
+                              <br/>
+                              <br/>
+                            </center>
+                          </div>
+                          
+                          <div id="crafting-box-1" class="box">
+                            <center>
+                              <p>Rock slate<br/>
+                              Used in crafting</p>
+                              <div class="label">Requires: 50 Rock, 10 Clay</div><br/>
+                              <div class="label">Amount: </div><div class="label" id="crafting-box-1-amount">0</div><br/>
+                              <input type="button" value="Craft" id="crafting-box-1-buy" onclick="craftItem(1);"/>
+                              <br/>
+                              <br/>
+                            </center>
+                          </div>
+                          
+                          <div id="crafting-box-2" class="box">
+                            <center>
+                              <p>Refined Pickaxe<br/>
+                              Mines better materials</p>
+                              <div class="label">Requires: 10 Rock slates, 20 Wood</div><br/>
+                              <div class="label">Amount: </div><div class="label" id="crafting-box-2-amount">0</div><br/>
+                              <input type="button" value="Craft" id="crafting-box-2-buy" onclick="craftItem(2);"/>
+                              <br/>
+                              <br/>
+                            </center>
+                          </div>
+                          
+                        </div>
+                        <!--End of crafting page-->
                         
                       </td>
                     </tr>
